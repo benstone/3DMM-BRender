@@ -213,6 +213,31 @@ static struct zb_material_type mat_types_index_8[] = {
         CM_U | CM_V | CM_I,
     },
 
+    /* Special Non-Transparent Rendering. (Textures only - the rest have
+       transparency, but it doesn't really matter. */
+
+    {
+        IDENT("Texture mapped (linear) AWNT"),
+        MT_MASK_T | BR_MATF_LIGHT | BR_MATF_PRELIT, ZB_MATF_HAS_MAP,
+        BR_PMT_INDEX_8, 0, 0,
+        ZbRenderFaceGroup_FaceIV, TriangleRenderPIZ2TIANT, LineRenderPIZ2TI, PointRenderPIZ2TI,
+        CM_COORDS | CM_U | CM_V , CM_U | CM_V,
+    },
+    {
+        IDENT("Lit flat texture mapped (linear) AWNT"),
+        MT_MASK_T | BR_MATF_LIGHT, BR_MATF_LIGHT | ZB_MATF_HAS_MAP,
+        BR_PMT_INDEX_8, 0, 0,
+        ZbRenderFaceGroup_FaceIV, TriangleRenderPIZ2TIANT, LineRenderPIZ2TI, PointRenderPIZ2TI,
+        CM_COORDS | CM_U | CM_V | CM_I, CM_U | CM_V | CM_I,
+    },
+    {
+        IDENT("Lit smooth texture mapped (linear) AWNT"),
+        MT_MASK_T | BR_MATF_LIGHT, BR_MATF_SMOOTH | BR_MATF_LIGHT | ZB_MATF_HAS_MAP,
+        BR_PMT_INDEX_8, 0, 0,
+        ZbRenderFaceGroup, TriangleRenderPIZ2TIANT, LineRenderPIZ2TI, PointRenderPIZ2TI,
+        CM_COORDS | CM_U | CM_V | CM_I, CM_U | CM_V | CM_I,
+    },
+
     //	/*
     //	 * Arbitary width general texture mapping + decal
     //	 */
