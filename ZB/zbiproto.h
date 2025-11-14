@@ -93,6 +93,8 @@ extern "C"
 
     void BR_ASM_CALL TriangleRenderPIZ2TIA(struct temp_vertex_fixed *a, struct temp_vertex_fixed *b,
                                            struct temp_vertex_fixed *c);
+    void BR_ASM_CALL TriangleRenderPIZ2TIANT(struct temp_vertex_fixed *a, struct temp_vertex_fixed *b,
+                                             struct temp_vertex_fixed *c);
     void BR_ASM_CALL TriangleRenderPIZ2TIA_RGB_555(struct temp_vertex_fixed *a, struct temp_vertex_fixed *b,
                                                    struct temp_vertex_fixed *c);
     void BR_ASM_CALL TriangleRenderPIZ2TIA_RGB_888(struct temp_vertex_fixed *a, struct temp_vertex_fixed *b,

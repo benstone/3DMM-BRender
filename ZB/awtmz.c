@@ -45,6 +45,8 @@ TrapezoidRenderCall TrapezoidRenderPIZ2TIA;
 TrapezoidRenderCall TrapezoidRenderPIZ2TIA_RGB_555;
 TrapezoidRenderCall TrapezoidRenderPIZ2TIA_RGB_888;
 
+TrapezoidRenderCall TrapezoidRenderPIZ2TIANT;
+
 static inline void TriangleRender_Generic_AWTMI(struct temp_vertex_fixed *a, struct temp_vertex_fixed *b,
                                   struct temp_vertex_fixed *c, br_boolean use_z_buffer, br_uint_32 bpp,
                                   TrapezoidRenderCall trapezoid_render, br_boolean use_bump,
@@ -322,6 +324,12 @@ void BR_ASM_CALL TriangleRenderPIZ2TIA(struct temp_vertex_fixed *a, struct temp_
                                        struct temp_vertex_fixed *c)
 {
     TriangleRender_Generic_AWTMI(a, b, c, 1, 1, TrapezoidRenderPIZ2TIA, 0, 1);
+}
+
+void BR_ASM_CALL TriangleRenderPIZ2TIANT(struct temp_vertex_fixed *a, struct temp_vertex_fixed *b,
+                                         struct temp_vertex_fixed *c)
+{
+    TriangleRender_Generic_AWTMI(a, b, c, 1, 1, TrapezoidRenderPIZ2TIANT, 0, 1);
 }
 
 void BR_ASM_CALL TriangleRenderPIZ2TA(struct temp_vertex_fixed *a, struct temp_vertex_fixed *b,
