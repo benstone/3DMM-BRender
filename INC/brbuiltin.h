@@ -37,7 +37,7 @@
 #define __BR_BITSCANREVERSE
 #endif
 
-#if _MSC_VER >= 1920
+#if _MSC_VER >= 1920 && (defined(_M_IX86) || defined(_M_AMD64))
 #define __BR_DIV64
 #endif
 
